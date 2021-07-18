@@ -51,6 +51,21 @@ client.on("message", message => {
   }
 }); 
 
+client.on('message', message => {
+  if (!message.guild) return;
+  if (message.content === PREFIX + 'join') {
+    if (message.member.voiceChannel) {
+      message.member.voiceChannel.join()
+        .then(connection => {
+          message.reply('**kra. ..**!');
+        })
+        .catch(console.log);
+    } else {
+      message.reply('**- bcho zhwrekawa !**');
+    }
+  }
+});
+
 client.on('message', async abdo => {
     if (abdo.content.startsWith(PREFIX + "delete channel")) {
     if (!abdo.member.hasPermission('MANAGE_CHANNELS')) return abdo.channel.send('**تۆ ناتوانی ئەم کردارە بکەیت واز بێرە سەرمان مەیەشێنە 😗**');
