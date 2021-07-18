@@ -1,5 +1,5 @@
 const { MessageEmbed } = require("discord.js");
-const { TrackUtils } = require("erela.js");
+const { TrackUtils } = require("index.js");
  
 module.exports = {
     name: "seek",
