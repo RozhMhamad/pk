@@ -94,6 +94,49 @@ client.on('message', async abdo => {
 
 
 client.on("message", message => {
+  if (message.content.startsWith(PREFIX + "games")) {
+    let LOST = [
+        "https://cdn.discordapp.com/attachments/768214204716548147/863171930583597126/223289690c3b25caacfb7d655ae3eb45.gif",
+        "https://cdn.discordapp.com/attachments/768214204716548147/863114313253650482/tumblr_bd72d07ed24e214a521b5e082176dfc6_3e4dea92_540.gif",
+        "https://cdn.discordapp.com/attachments/768214204716548147/862732806580600842/b6030pz.gif",
+        "https://cdn.discordapp.com/attachments/768214204716548147/862357309718921296/image0.gif",
+        "https://cdn.discordapp.com/attachments/768214204716548147/862070083103096842/image6.gif",
+        "https://cdn.discordapp.com/attachments/768214204716548147/861903506906021908/image3.gif",
+        "https://cdn.discordapp.com/attachments/768214204716548147/861683832382291968/image3-19.gif",
+        "https://cdn.discordapp.com/attachments/768214204716548147/861678730610212934/tenor_5.gif",
+        "https://cdn.discordapp.com/attachments/768214204716548147/861443940627644466/image3.gif",
+        "https://cdn.discordapp.com/attachments/768214204716548147/860992029826482216/bb12bddd6c7dd1dfc0971f15dd8acc47.gif",
+        "https://cdn.discordapp.com/attachments/768214204716548147/860587344092201010/image0.gif",
+        "https://cdn.discordapp.com/attachments/768214204716548147/860347878577143818/1.gif",
+        "https://cdn.discordapp.com/attachments/768214204716548147/860262056179793930/ead90ca9274bc95d310d6b27604a7881.gif",
+        "https://cdn.discordapp.com/attachments/768214204716548147/859823712756301844/69b2e69846aad72a618340d4f4da33f1.gif",
+        "https://cdn.discordapp.com/attachments/768214204716548147/859587966669291530/tenor_7.gif",
+        "https://cdn.discordapp.com/attachments/768214204716548147/859133566994481203/giphy_21.gif",
+        "https://cdn.discordapp.com/attachments/768214204716548147/859124528563224586/image1.gif",
+        "https://cdn.discordapp.com/attachments/768214204716548147/858745260109070336/2.gif",
+        "https://cdn.discordapp.com/attachments/768214204716548147/858086131681067008/image5.gif",
+        "https://media.discordapp.net/attachments/768214204716548147/858374866603081728/ezgif-7-d7bac12481b9.gif",
+        "https://cdn.discordapp.com/attachments/768214204716548147/857657586688852019/image4.gif",
+        "https://cdn.discordapp.com/attachments/768214204716548147/856679590189203472/tenor.gif",
+        "https://cdn.discordapp.com/attachments/768214204716548147/856639368286437396/image4.gif",
+        "https://cdn.discordapp.com/attachments/768214204716548147/856630500600709170/image1.gif"
+      ];
+    message.channel
+      .send({
+        embed: {
+          description: `**games**`,
+          image: {
+            url: LOST[Math.floor(Math.random() * LOST.length)]
+          }
+        }
+      })
+      .catch(e => {
+        client.log.error(e);
+      });
+  }
+});
+
+client.on("message", message => {
   if (message.content.startsWith(PREFIX + "pboy")) {
     let exploit = [
       "https://cdn.discordapp.com/avatars/584486122521100308/00e684b8c3ca4fab1a8d3efc200e58ac.webp",
