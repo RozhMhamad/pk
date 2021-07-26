@@ -1,4 +1,4 @@
-Am coda abet const discordButtons = require("discord-buttons");
+const discordButtons = require("discord-buttons");
 const buttonClient = new discordButtons(client);
 client.on("message", message => {
   if (message.content === "!pi") {
